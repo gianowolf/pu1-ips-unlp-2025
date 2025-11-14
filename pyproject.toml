@@ -1,16 +1,15 @@
+[project]
+name = "pu1-ips-2025-unlp"
+version = "0.1.0"
+description = "Entorno reproducible para los ejercicios de la práctica 1 de IPS 2025 (UNLP)."
+readme = "README.md"
+requires-python = ">=3.11"
+
+authors = [
+    { name = "Gian Franco Lasala" }
+]
+
 [build-system]
-requires = ["setuptools>=68", "wheel"]
+requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 
-[project]
-name = "dspmini"
-version = "0.1.0"
-description = "Utilidades mínimas de DSP discreto para notebooks"
-authors = [{name = "Gian"}]
-readme = ""
-requires-python = ">=3.10"
-dependencies = ["numpy>=1.24", "matplotlib>=3.7"]
-
-[tool.setuptools]
-package-dir = {"" = "src"}
-packages = ["dspmini"]

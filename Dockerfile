@@ -1,20 +1,18 @@
-FROM python:3.11
+FROM python:3.11-slim
 
-# Evita prompts interactivos y usa backend headless para matplotlib
-ENV DEBIAN_FRONTEND=noninteractive
-ENV MPLBACKEND=Agg
-WORKDIR /app
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    libsndfile1 \
+    && rm -rf /var/lib/apt/lists/*
 
-# Copia requirements e instala dependencias
-COPY requirements.txt /app/
-RUN python -m pip install --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
+WORKDIR /workspace
 
-# Copia el resto del proyecto
-COPY . /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir --upgrade pip \
+    && pip install --no-cache-dir -r requirements.txt
 
-# Kernel de Jupyter dentro del contenedor (opcional)
-RUN python -m ipykernel install --user --name dsp-mini --display-name "Python (dsp-mini)"
+COPY . .
 
 EXPOSE 8888
-CMD ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root", "--no-browser"]
+
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--NotebookApp.notebook_dir=/workspace"]

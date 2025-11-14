@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  jupyter:
+    build: .
+    container_name: pu1-ips-2025-unlp
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    environment:
+      - MPLBACKEND=Agg
+    command: [
+      "jupyter", "lab",
+      "--ip=0.0.0.0",
+      "--port=8888",
+      "--no-browser",
+      "--NotebookApp.notebook_dir=/workspace"
+    ]

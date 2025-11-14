@@ -1,0 +1,49 @@
+LEEME.txt
+
+Este proyecto contiene los notebooks de la Práctica 1 de la materia **Introducción al Procesamiento de Señales (IPS)**.
+Para ejecutarlos se necesita **Python 3.10 o 3.11**.
+
+Siga los pasos que se describen a continuación.
+
+---
+
+1. Crear el entorno virtual
+
+En una terminal, dentro del directorio del proyecto:
+
+python3 -m venv .venv
+
+Activar el entorno:
+
+Linux:
+source .venv/bin/activate
+
+Windows (PowerShell):
+.venv\Scripts\Activate.ps1
+
+---
+
+2. Instalar las dependencias
+
+Con el entorno activado:
+
+pip install --upgrade pip
+pip install -r requirements.txt
+
+---
+
+### **3. Ejecutar Jupyter Lab**
+
+jupyter lab
+
+Se abrirá una ventana en el navegador.
+Allí se encuentran los notebooks en la carpeta `notebooks/`.
+
+---
+
+### **Estructura básica del proyecto**
+
+data/        archivos de la señal y audio
+notebooks/   ejercicios de la práctica
+requirements.txt
+LEEME.txt
