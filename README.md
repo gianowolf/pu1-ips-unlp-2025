@@ -16,7 +16,20 @@ Estructura principal:
 
 - Python 3.11
 
-### 1.2. Creación de entorno virtual
+## 1.2. Ejecución simplificada (recomendado)
+
+El proyecto incluye un script llamado **`run_pu1.sh`** que automatiza los pasos de configuración:
+
+- crea el entorno virtual `.venv` si no existe,
+- instala las dependencias mediante `requirements.txt`,
+- inicia Jupyter Lab.
+
+```bash
+chmod +x run_pu1.sh
+./run_pu1.sh
+```
+
+### 1.3. Creación de entorno virtual
 
 En Linux:
 
@@ -36,7 +49,7 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### 1.3. Ejecución de Jupyter Lab
+### 1.4. Ejecución de Jupyter Lab
 
 Con el entorno virtual activado:
 
